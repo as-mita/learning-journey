@@ -3,7 +3,6 @@ import os
 
 
 
-
 def write_key():
     """Generate and save a key if not exists."""
     key = Fernet.generate_key()
@@ -23,8 +22,6 @@ if not os.path.exists("key.key"):
 
 key = load_key()
 fer = Fernet(key)
-
-
 
 
 def view():
@@ -54,14 +51,12 @@ def add():
     print(f"Password for {name} saved successfully!")
 
 
-
-
 while True:
     mode = input(
         "\nWould you like to add a new password or view existing ones? (view, add), press 'q' to quit: ").lower()
 
     if mode == 'q':
-        print("Goodbye 👋")
+        print("Thank You")
         break
     elif mode == 'view':
         view()
