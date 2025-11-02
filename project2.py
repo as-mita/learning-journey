@@ -48,8 +48,7 @@ while max(player_scores) < max_score:
 
 max_score = max(player_scores)
 winning_indx = player_scores.index(max_score)
-print("Player number", winning_indx + 1,
-      "is the winner with as score of:", max_score)
+print("Player number", winning_indx + 1, "is the winner with as score of:", max_score)
 
 
 
