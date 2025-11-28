@@ -37,20 +37,20 @@ class ExpenseTracker:
         try:
             datetime.strptime(date, "%Y-%m-%d")
         except ValueError:
-            print("❌ Invalid date format. Use YYYY-MM-DD.")
+            print(" Invalid date format. Use YYYY-MM-DD.")
             return
 
         try:
             amount = float(amount)
         except ValueError:
-            print("❌ Amount must be a number.")
+            print(" Amount must be a number.")
             return
 
         expenses = self.load_expenses()
         new_expense = Expense(title, amount, date)
         expenses.append(new_expense.to_dict())
         self.save_expenses(expenses)
-        print("✅ Expense added successfully!")
+        print("Expense added successfully!")
 
     def view_all(self):
         expenses = self.load_expenses()
@@ -66,13 +66,13 @@ class ExpenseTracker:
     def total_expense(self):
         expenses = self.load_expenses()
         total = sum(e["amount"] for e in expenses)
-        print(f"\n💰 Total Expense: Rs. {total}")
+        print(f"\n Total Expense: Rs. {total}")
 
     def filter_by_date(self, date):
         try:
             datetime.strptime(date, "%Y-%m-%d")
         except ValueError:
-            print("❌ Invalid date format.")
+            print(" Invalid date format.")
             return
 
         expenses = self.load_expenses()
@@ -117,11 +117,11 @@ def main():
             tracker.filter_by_date(date)
 
         elif choice == "5":
-            print("👋 Exiting program...")
+            print("Exiting program...")
             break
 
         else:
-            print("❌ Invalid choice. Try again.")
+            print(" Invalid choice. Try again.")
 
 
 if __name__ == "__main__":
